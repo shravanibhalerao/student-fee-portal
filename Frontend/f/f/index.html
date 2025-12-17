@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Fees Management Portal</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container-fluid ps-4 pe-4">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">
+        <i class="fas fa-graduation-cap"></i> Student Fees Portal
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="admission.html">Admission</a></li>
+          <li class="nav-item"><a class="nav-link" href="fees.html">Fees</a></li>
+          <li class="nav-item"><a class="nav-link" href="timetable.html">Timetable</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-primary text-white py-5 text-center">
+    <div class="container py-5">
+      <h1 class="display-3 fw-bold mb-4">Student Fees Management Portal</h1>
+      <p class="fs-5 opacity-75 mb-4">Manage Admissions, Payments, Timetables, and Reports — all in one place.</p>
+      <div>
+        <a href="login.html" class="btn btn-warning fw-bold px-4 py-2 me-3">
+          <i class="fas fa-sign-in-alt"></i> Student Login
+        </a>
+        <a href="admission.html" class="btn btn-outline-light fw-bold px-4 py-2">
+          <i class="fas fa-user-plus"></i> New Registration
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="bg-white py-5">
+    <div class="container">
+      <h2 class="text-primary fw-bold text-center mb-5">Our Features</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 text-center p-4">
+            <div class="fs-1 text-primary mb-3">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h5 class="fw-bold">Student Management</h5>
+            <p class="text-muted">Simple admission process, ID generation, and profile updates — all centralized.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 text-center p-4">
+            <div class="fs-1 text-primary mb-3">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h5 class="fw-bold">Online Payments</h5>
+            <p class="text-muted">Pay fees securely online and receive instant digital receipts.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 text-center p-4">
+            <div class="fs-1 text-primary mb-3">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h5 class="fw-bold">Timetable Management</h5>
+            <p class="text-muted">Access live timetables, academic calendars, and exam schedules anytime.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 text-center p-4">
+            <div class="fs-1 text-primary mb-3">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h5 class="fw-bold">Reports & Results</h5>
+            <p class="text-muted">View test reports, grades, and academic summaries in one place.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 text-center p-4">
+            <div class="fs-1 text-primary mb-3">
+              <i class="fas fa-bell"></i>
+            </div>
+            <h5 class="fw-bold">Notifications</h5>
+            <p class="text-muted">Stay updated with instant alerts and announcements.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 text-center p-4">
+            <div class="fs-1 text-primary mb-3">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h5 class="fw-bold">Analytics</h5>
+            <p class="text-muted">Monitor progress and insights with data-driven analytics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-primary text-white py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="py-3">
+            <div class="fs-2 fw-bold">5000+</div>
+            <div class="opacity-75">Active Students</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="py-3">
+            <div class="fs-2 fw-bold">₹5Cr+</div>
+            <div class="opacity-75">Fees Processed</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="py-3">
+            <div class="fs-2 fw-bold">98%</div>
+            <div class="opacity-75">Satisfaction Rate</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="py-3">
+            <div class="fs-2 fw-bold">24/7</div>
+            <div class="opacity-75">Support Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-white py-5 text-center">
+    <div class="container">
+      <h2 class="text-primary fw-bold mb-3">Ready to Get Started?</h2>
+      <p class="fs-5 text-muted mb-4">Join thousands of students managing their education seamlessly.</p>
+      
+      <a href="admission.html" class="btn btn-warning fw-bold px-4 py-2 me-3">
+        <i class="fas fa-user-plus"></i> Register Now
+      </a>
+      <a href="login.html" class="btn btn-primary fw-bold px-4 py-2">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row mb-4 g-4">
+        <div class="col-md-6 col-lg-3">
+          <h6 class="fw-bold mb-3"><i class="fas fa-graduation-cap"></i> About Portal</h6>
+          <p class="small">A complete platform for admissions, payments, and academic management.</p>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <a href="index.html" class="d-block text-decoration-none text-white-50 small mb-2">Home</a>
+          <a href="admission.html" class="d-block text-decoration-none text-white-50 small mb-2">Admission</a>
+          <a href="fees.html" class="d-block text-decoration-none text-white-50 small mb-2">Fees</a>
+          <a href="login.html" class="d-block text-decoration-none text-white-50 small mb-2">Login</a>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h6 class="fw-bold mb-3">Contact Us</h6>
+          <p class="small mb-2">Email: info@studentfees.com</p>
+          <p class="small mb-2">Phone: +91-1234-567890</p>
+          <p class="small">Mumbai, India</p>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h6 class="fw-bold mb-3">Follow Us</h6>
+          <a href="#" class="d-block text-decoration-none text-white-50 small mb-2"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="#" class="d-block text-decoration-none text-white-50 small mb-2"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" class="d-block text-decoration-none text-white-50 small"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+      <div class="border-top border-secondary pt-3 text-center small text-white-50">
+        <p>&copy; 2024 Student Fees Management Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

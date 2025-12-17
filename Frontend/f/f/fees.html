@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees - Student Fees Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+        <div class="container-fluid ps-4 pe-4">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap"></i> Student Fees Portal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission.html">Admission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="fees.html">Fees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-primary text-white py-5 text-center mb-5">
+        <div class="container">
+            <h1 class="fw-bold display-5"><i class="fas fa-credit-card"></i> Fee Management</h1>
+            <p class="fs-5 opacity-75">View fee structure, make payments, and download receipts</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Pending Fees Alert -->
+        <div class="alert alert-warning border-start border-5 p-4 mb-4 rounded-0">
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>Pending Fees Alert:</strong> You have ₹5,000 in pending fees. Please pay before the due date to
+            avoid penalties.
+            <a href="#paymentSection" class="ms-3 fw-bold text-dark">Pay Now</a>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="row mb-4 g-3">
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-2 text-primary mb-3"><i class="fas fa-credit-card"></i></div>
+                        <div class="fs-5 fw-bold text-dark">₹15,000</div>
+                        <div class="small text-muted">Total Fees</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-2 text-success mb-3"><i class="fas fa-check-circle"></i></div>
+                        <div class="fs-5 fw-bold text-dark">₹10,000</div>
+                        <div class="small text-muted">Paid Amount</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-2 text-warning mb-3"><i class="fas fa-hourglass"></i></div>
+                        <div class="fs-5 fw-bold text-dark">₹5,000</div>
+                        <div class="small text-muted">Pending Amount</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-2 text-info mb-3"><i class="fas fa-percent"></i></div>
+                        <div class="fs-5 fw-bold text-dark">67%</div>
+                        <div class="small text-muted">Payment Status</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fee Structure Section -->
+        <div class="card border-0 shadow-sm p-4 mb-4">
+            <h3 class="mb-4"><i class="fas fa-list"></i> Fee Structure by Class</h3>
+
+            <ul class="nav nav-tabs mb-4" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#class10">Class 10</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#class11">Class 11</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#class12">Class 12</button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- Class 10 Fee Structure -->
+                <div id="class10" class="tab-pane fade show active">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th>Fee Type</th>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tuition Fee</strong></td>
+                                    <td>₹8,000</td>
+                                    <td>30-06-2024</td>
+                                    <td>Regular classroom instruction</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lab Fee</strong></td>
+                                    <td>₹2,000</td>
+                                    <td>30-06-2024</td>
+                                    <td>Laboratory and practical classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sports Fee</strong></td>
+                                    <td>₹1,000</td>
+                                    <td>31-07-2024</td>
+                                    <td>Sports activities and facilities</td>
+                                </tr>
+                                <tr class="table-active fw-bold">
+                                    <td>Total</td>
+                                    <td>₹11,000</td>
+                                    <td colspan="2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 11 Fee Structure -->
+                <div id="class11" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th>Fee Type</th>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tuition Fee</strong></td>
+                                    <td>₹9,500</td>
+                                    <td>30-06-2024</td>
+                                    <td>Regular classroom instruction</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lab Fee</strong></td>
+                                    <td>₹2,500</td>
+                                    <td>30-06-2024</td>
+                                    <td>Laboratory and practical classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sports Fee</strong></td>
+                                    <td>₹1,500</td>
+                                    <td>31-07-2024</td>
+                                    <td>Sports activities and facilities</td>
+                                </tr>
+                                <tr class="table-active fw-bold">
+                                    <td>Total</td>
+                                    <td>₹13,500</td>
+                                    <td colspan="2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 12 Fee Structure -->
+                <div id="class12" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th>Fee Type</th>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Tuition Fee</strong></td>
+                                    <td>₹10,000</td>
+                                    <td>30-06-2024</td>
+                                    <td>Regular classroom instruction</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lab Fee</strong></td>
+                                    <td>₹3,000</td>
+                                    <td>30-06-2024</td>
+                                    <td>Laboratory and practical classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sports Fee</strong></td>
+                                    <td>₹2,000</td>
+                                    <td>31-07-2024</td>
+                                    <td>Sports activities and facilities</td>
+                                </tr>
+                                <tr class="table-active fw-bold">
+                                    <td>Total</td>
+                                    <td>₹15,000</td>
+                                    <td colspan="2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Fee Status -->
+        <div class="card border-0 shadow-sm p-4 mb-4">
+            <h3 class="mb-4"><i class="fas fa-history"></i> Your Fee Payment Status</h3>
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th>Fee Type</th>
+                            <th>Amount</th>
+                            <th>Paid</th>
+                            <th>Remaining</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tuition Fee</strong></td>
+                            <td>₹10,000</td>
+                            <td>₹10,000</td>
+                            <td>₹0</td>
+                            <td><span class="badge bg-success"><i class="fas fa-check"></i> Paid</span></td>
+                            <td><button class="btn btn-sm btn-outline-primary"
+                                    onclick="downloadReceipt('TF001')">Receipt</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lab Fee</strong></td>
+                            <td>₹2,000</td>
+                            <td>₹0</td>
+                            <td>₹2,000</td>
+                            <td><span class="badge bg-warning text-dark"><i class="fas fa-clock"></i> Pending</span>
+                            </td>
+                            <td><a href="#paymentSection" class="btn btn-sm btn-primary">Pay Now</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sports Fee</strong></td>
+                            <td>₹3,000</td>
+                            <td>₹0</td>
+                            <td>₹3,000</td>
+                            <td><span class="badge bg-warning text-dark"><i class="fas fa-clock"></i> Pending</span>
+                            </td>
+                            <td><a href="#paymentSection" class="btn btn-sm btn-primary">Pay Now</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="card border-0 shadow-sm p-4 mb-4" id="paymentSection">
+            <h3 class="mb-4"><i class="fas fa-money-bill"></i> Make Payment</h3>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <form id="paymentForm" onsubmit="handlePayment(event)">
+                        <div class="mb-3">
+                            <label for="feeType" class="form-label">Select Fee Type <span
+                                    class="text-danger">*</span></label>
+                            <select class="form-select" id="feeType" required>
+                                <option value="">Choose fee type...</option>
+                                <option value="Lab Fee" data-amount="2000">Lab Fee - ₹2,000</option>
+                                <option value="Sports Fee" data-amount="3000">Sports Fee - ₹3,000</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount (₹) <span
+                                    class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="amount" placeholder="Enter amount" step="0.01"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Payment Method <span class="text-danger">*</span></label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="paymentMethod" id="cardMethod" value="Card" required>
+                                <label class="btn btn-outline-primary fw-bold" for="cardMethod">
+                                    <i class="fas fa-credit-card"></i> Card
+                                </label>
+
+                                <input type="radio" class="btn-check" name="paymentMethod" id="upiMethod" value="UPI" required>
+                                <label class="btn btn-outline-primary fw-bold" for="upiMethod">
+                                    <i class="fas fa-mobile-alt"></i> UPI
+                                </label>
+
+                                <input type="radio" class="btn-check" name="paymentMethod" id="qrMethod" value="QR Code" required>
+                                <label class="btn btn-outline-primary fw-bold" for="qrMethod">
+                                    <i class="fas fa-qrcode"></i> QR Code
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Card Payment Fields -->
+                        <div id="cardFields" class="d-none">
+                            <div class="mb-3">
+                                <label for="cardNumber" class="form-label">Card Number <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="cardNumber"
+                                    placeholder="Enter card number">
+                            </div>
+                        </div>
+
+                        <!-- UPI Payment Fields -->
+                        <div id="upiFields" class="d-none">
+                            <div class="mb-3">
+                                <label for="upiId" class="form-label">UPI ID <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="upiId"
+                                    placeholder="Enter UPI ID (e.g., username@upi)">
+                            </div>
+                        </div>
+
+                        <!-- QR Code Payment Fields -->
+                        <div id="qrFields" class="d-none">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i> <strong>Scan QR Code to Pay</strong>
+                                <p class="mt-2 mb-0">Use any UPI app to scan the QR code below</p>
+                            </div>
+                            <div id="qrcodeContainer" class="text-center mb-3"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">
+                            <i class="fas fa-lock"></i> Proceed to Payment
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="bg-info bg-opacity-10 p-4 border-start border-5 border-info rounded-0">
+                        <h5 class="fw-bold mb-3">Payment Information</h5>
+                        <p class="mb-2"><strong>Total Pending Fees:</strong> ₹5,000</p>
+                        <p class="mb-2"><strong>Processing Fee:</strong> ₹0 (No extra charges)</p>
+                        <p class="mb-3"><strong>Payment Status:</strong> <span class="badge bg-warning text-dark">In Progress</span></p>
+                        <hr>
+                        <p class="small text-muted mb-0">
+                            <i class="fas fa-shield-alt"></i> Your payment is secured by 256-bit SSL encryption. We
+                            accept all major payment methods.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-body text-center py-5">
+                    <div class="mb-4">
+                        <i class="fas fa-check-circle text-success" style="font-size: 5rem;"></i>
+                    </div>
+                    <h3 class="fw-bold text-success mb-3">Payment Successful!</h3>
+                    <p class="text-muted mb-4">Your payment has been processed successfully.</p>
+                    
+                    <div class="bg-light p-3 rounded mb-4 text-start">
+                        <p class="mb-2"><strong>Receipt No:</strong> <span id="successReceiptNo">RCP123456</span></p>
+                        <p class="mb-2"><strong>Date:</strong> <span id="successDate"></span></p>
+                        <p class="mb-2"><strong>Amount Paid:</strong> <span id="successAmount">₹0</span></p>
+                        <p class="mb-0"><strong>Payment Method:</strong> <span id="successMethod">--</span></p>
+                    </div>
+
+                    <button type="button" class="btn btn-primary fw-bold me-2" onclick="printReceipt()">
+                        <i class="fas fa-print"></i> Print Receipt
+                    </button>
+                    <button type="button" class="btn btn-outline-primary fw-bold" data-bs-dismiss="modal">
+                        <i class="fas fa-check"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Code Payment Modal -->
+    <div class="modal fade" id="qrPaymentModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-primary text-white border-0">
+                    <h5 class="modal-title"><i class="fas fa-qrcode"></i> Scan QR Code to Pay</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center py-5">
+                    <div id="qrCodeDisplay" class="mb-4"></div>
+                    <p class="text-muted mb-4">Amount to Pay: <strong id="qrAmount">₹0</strong></p>
+                    <p class="small text-muted mb-3">Scan this QR code using any UPI app to complete your payment</p>
+                    
+                    <button type="button" class="btn btn-success fw-bold w-100" onclick="confirmQRPayment()">
+                        <i class="fas fa-check-circle"></i> I have completed the payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Student Fees Management Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Payment method selection
+        document.getElementById('cardMethod').addEventListener('change', function() {
+            document.getElementById('cardFields').classList.remove('d-none');
+            document.getElementById('upiFields').classList.add('d-none');
+            document.getElementById('qrFields').classList.add('d-none');
+        });
+
+        document.getElementById('upiMethod').addEventListener('change', function() {
+            document.getElementById('cardFields').classList.add('d-none');
+            document.getElementById('upiFields').classList.remove('d-none');
+            document.getElementById('qrFields').classList.add('d-none');
+        });
+
+        document.getElementById('qrMethod').addEventListener('change', function() {
+            document.getElementById('cardFields').classList.add('d-none');
+            document.getElementById('upiFields').classList.add('d-none');
+            document.getElementById('qrFields').classList.remove('d-none');
+            generateQRCode();
+        });
+
+        function generateQRCode() {
+            const amount = document.getElementById('amount').value || '0';
+            // PhonePe UPI string for Miss ANKITA SANTOSH GAIKWAD
+            const upiString = `upi://pay?pa=ankitasantosh@phonepe&pn=Miss%20ANKITA%20SANTOSH%20GAIKWAD&am=${amount}&tr=${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+            
+            document.getElementById('qrcodeContainer').innerHTML = '';
+            new QRCode(document.getElementById('qrcodeContainer'), {
+                text: upiString,
+                width: 250,
+                height: 250,
+                colorDark: "#000000",
+                colorLight: "#ffffff"
+            });
+        }
+
+        document.getElementById('feeType').addEventListener('change', function () {
+            const selectedOption = this.options[this.selectedIndex];
+            const amount = selectedOption.getAttribute('data-amount');
+            if (amount) {
+                document.getElementById('amount').value = amount;
+            }
+        });
+
+        document.getElementById('cardNumber').addEventListener('input', function (e) {
+            this.value = this.value.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ').trim();
+        });
+
+        function handlePayment(event) {
+            event.preventDefault();
+
+            const feeType = document.getElementById('feeType').value;
+            const amount = document.getElementById('amount').value;
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+            if (!feeType || !amount || !paymentMethod) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            if (paymentMethod === 'QR Code') {
+                showQRPaymentModal(amount, paymentMethod);
+            } else {
+                showSuccessModal(amount, paymentMethod);
+            }
+        }
+
+        function showQRPaymentModal(amount, method) {
+            document.getElementById('qrAmount').textContent = '₹' + parseFloat(amount).toLocaleString('en-IN');
+            
+            document.getElementById('qrCodeDisplay').innerHTML = '';
+            // PhonePe UPI string for Miss ANKITA SANTOSH GAIKWAD
+            const upiString = `upi://pay?pa=ankitasantosh@phonepe&pn=Miss%20ANKITA%20SANTOSH%20GAIKWAD&am=${amount}&tr=${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+            new QRCode(document.getElementById('qrCodeDisplay'), {
+                text: upiString,
+                width: 250,
+                height: 250,
+                colorDark: "#000000",
+                colorLight: "#ffffff"
+            });
+
+            const qrModal = new bootstrap.Modal(document.getElementById('qrPaymentModal'));
+            qrModal.show();
+        }
+
+        function confirmQRPayment() {
+            const amount = document.getElementById('amount').value;
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            
+            // Close QR modal
+            const qrModal = bootstrap.Modal.getInstance(document.getElementById('qrPaymentModal'));
+            qrModal.hide();
+            
+            // Show success modal after 1 second
+            setTimeout(() => {
+                showSuccessModal(amount, paymentMethod);
+            }, 500);
+        }
+
+        function showSuccessModal(amount, method) {
+            document.getElementById('successReceiptNo').textContent = 'RCP' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            document.getElementById('successDate').textContent = new Date().toLocaleDateString();
+            document.getElementById('successAmount').textContent = '₹' + parseFloat(amount).toLocaleString('en-IN');
+            document.getElementById('successMethod').textContent = method;
+
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            document.getElementById('paymentForm').reset();
+            document.getElementById('cardFields').classList.add('d-none');
+            document.getElementById('upiFields').classList.add('d-none');
+            document.getElementById('qrFields').classList.add('d-none');
+        }
+
+        function printReceipt() {
+            window.print();
+        }
+
+        function downloadReceipt(receiptId) {
+            alert('Receipt ' + receiptId + ' downloaded successfully!');
+        }
+    </script>
+</body>
+
+</html>

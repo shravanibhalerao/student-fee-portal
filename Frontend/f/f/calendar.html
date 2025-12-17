@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar & Admin - Student Fees Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+        <div class="container-fluid ps-4 pe-4">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap"></i> Student Fees Portal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#calendar">Calendar</a></li>
+                            <li><a class="dropdown-item" href="#admin">Admin Panel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs sticky-top bg-white shadow-sm mb-0" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active fw-bold text-dark" data-bs-toggle="tab" data-bs-target="#calendar">
+                <i class="fas fa-calendar-alt"></i> Academic Calendar
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link fw-bold text-dark" data-bs-toggle="tab" data-bs-target="#admin">
+                <i class="fas fa-chart-line"></i> Admin Dashboard
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- Academic Calendar Tab -->
+        <div id="calendar" class="tab-pane fade show active">
+            <!-- Page Header -->
+            <div class="bg-primary text-white py-5 text-center mb-5">
+                <div class="container">
+                    <h1 class="fw-bold display-5"><i class="fas fa-calendar-alt"></i> Academic Calendar 2024-2025</h1>
+                    <p class="fs-5 opacity-75">Important dates, holidays, and academic events</p>
+                </div>
+            </div>
+
+            <div class="container mb-5">
+                <div class="row g-4">
+                    <!-- Calendar Section -->
+                    <div class="col-lg-7">
+                        <div class="card border-0 shadow-sm p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="fw-bold"><i class="fas fa-calendar"></i> September 2024</h4>
+                                <div class="gap-2 d-flex">
+                                    <button class="btn btn-sm btn-outline-primary fw-bold" onclick="prevMonth()">← Prev</button>
+                                    <button class="btn btn-sm btn-outline-primary fw-bold" onclick="nextMonth()">Next →</button>
+                                </div>
+                            </div>
+
+                            <!-- Calendar Header (Days) -->
+                            <div class="row row-cols-7 g-2 mb-2">
+                                <div class="col text-center fw-bold text-primary">Sun</div>
+                                <div class="col text-center fw-bold text-primary">Mon</div>
+                                <div class="col text-center fw-bold text-primary">Tue</div>
+                                <div class="col text-center fw-bold text-primary">Wed</div>
+                                <div class="col text-center fw-bold text-primary">Thu</div>
+                                <div class="col text-center fw-bold text-primary">Fri</div>
+                                <div class="col text-center fw-bold text-primary">Sat</div>
+                            </div>
+
+                            <!-- Calendar Days -->
+                            <div class="row row-cols-7 g-2">
+                                <!-- Previous month days -->
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">25</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">26</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">27</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">28</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">29</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">30</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">31</div></div>
+
+                                <!-- Current month -->
+                                <div class="col"><div class="border p-2 text-center rounded">1</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">2</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">3</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">4</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">5</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">6</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">7</div></div>
+
+                                <div class="col"><div class="border p-2 text-center rounded">8</div></div>
+                                <div class="col"><div class="bg-primary text-white p-2 text-center fw-bold rounded border border-primary">15<br><span class="badge bg-light text-primary">●</span></div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">16</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">17</div></div>
+                                <div class="col"><div class="border border-primary p-2 text-center rounded">18<br><span class="badge bg-primary">●</span></div></div>
+                                <div class="col"><div class="border border-primary p-2 text-center rounded">19<br><span class="badge bg-primary">●</span></div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">20</div></div>
+
+                                <div class="col"><div class="border p-2 text-center rounded">21</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">22</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">23</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">24</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">25</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">26</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">27</div></div>
+
+                                <div class="col"><div class="border p-2 text-center rounded">28</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">29</div></div>
+                                <div class="col"><div class="border p-2 text-center rounded">30</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">1</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">2</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">3</div></div>
+                                <div class="col"><div class="border p-2 text-center text-muted bg-light rounded">4</div></div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button class="btn btn-primary fw-bold" onclick="downloadCalendar()">
+                                    <i class="fas fa-download"></i> Download Calendar
+                                </button>
+                                <button class="btn btn-secondary fw-bold ms-2" onclick="window.print()">
+                                    <i class="fas fa-print"></i> Print Calendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Events Section -->
+                    <div class="col-lg-5">
+                        <div class="card border-0 shadow-sm p-4">
+                            <h4 class="fw-bold mb-4"><i class="fas fa-list"></i> Upcoming Events</h4>
+
+                            <div class="card border-start border-5 border-primary shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h6 class="fw-bold text-primary">Mid-Term Exams</h6>
+                                    <p class="mb-2"><i class="fas fa-calendar"></i> 15-20 September 2024</p>
+                                    <p class="small text-muted mb-2">All mid-term examinations for classes 10-12</p>
+                                    <span class="badge bg-info">Examination</span>
+                                </div>
+                            </div>
+
+                            <div class="card border-start border-5 border-primary shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h6 class="fw-bold text-primary">Teachers' Day Celebration</h6>
+                                    <p class="mb-2"><i class="fas fa-calendar"></i> 05 September 2024</p>
+                                    <p class="small text-muted mb-2">Special assembly and cultural program</p>
+                                    <span class="badge bg-success">Activity</span>
+                                </div>
+                            </div>
+
+                            <div class="card border-start border-5 border-primary shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h6 class="fw-bold text-primary">Independence Day Holiday</h6>
+                                    <p class="mb-2"><i class="fas fa-calendar"></i> 15 August 2024</p>
+                                    <p class="small text-muted mb-2">School closed for Independence Day</p>
+                                    <span class="badge bg-danger">Holiday</span>
+                                </div>
+                            </div>
+
+                            <div class="card border-start border-5 border-primary shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h6 class="fw-bold text-primary">Annual Sports Day</h6>
+                                    <p class="mb-2"><i class="fas fa-calendar"></i> 25-26 September 2024</p>
+                                    <p class="small text-muted mb-2">Inter-house sports competition</p>
+                                    <span class="badge bg-success">Activity</span>
+                                </div>
+                            </div>
+
+                            <div class="card border-start border-5 border-primary shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h6 class="fw-bold text-primary">Diwali Holidays</h6>
+                                    <p class="mb-2"><i class="fas fa-calendar"></i> 01-15 October 2024</p>
+                                    <p class="small text-muted mb-2">School closed for Diwali festival</p>
+                                    <span class="badge bg-danger">Holiday</span>
+                                </div>
+                            </div>
+
+                            <div class="card border-start border-5 border-primary shadow-sm">
+                                <div class="card-body">
+                                    <h6 class="fw-bold text-primary">Parent-Teacher Meeting</h6>
+                                    <p class="mb-2"><i class="fas fa-calendar"></i> 10 November 2024</p>
+                                    <p class="small text-muted mb-2">Interaction between parents and teachers</p>
+                                    <span class="badge bg-success">Activity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard Tab -->
+        <div id="admin" class="tab-pane fade">
+            <!-- Page Header -->
+            <div class="bg-primary text-white py-5 text-center mb-5">
+                <div class="container">
+                    <h1 class="fw-bold display-5"><i class="fas fa-chart-line"></i> Admin Dashboard</h1>
+                    <p class="fs-5 opacity-75">Overview of students, fees, and academic data</p>
+                </div>
+            </div>
+
+            <div class="container mb-5">
+                <!-- Statistics Section -->
+                <div class="row mb-4 g-3">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-primary text-white border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="fs-2 mb-2"><i class="fas fa-users"></i></div>
+                                <div class="fs-4 fw-bold">1,245</div>
+                                <div class="small opacity-75">Total Students</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-primary text-white border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="fs-2 mb-2"><i class="fas fa-credit-card"></i></div>
+                                <div class="fs-4 fw-bold">₹52L</div>
+                                <div class="small opacity-75">Total Fees Collected</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-primary text-white border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="fs-2 mb-2"><i class="fas fa-exclamation-circle"></i></div>
+                                <div class="fs-4 fw-bold">₹8.5L</div>
+                                <div class="small opacity-75">Pending Fees</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-primary text-white border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="fs-2 mb-2"><i class="fas fa-calendar-check"></i></div>
+                                <div class="fs-4 fw-bold">6</div>
+                                <div class="small opacity-75">Upcoming Exams</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Management Tabs -->
+                <ul class="nav nav-tabs mb-4" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active fw-bold" data-bs-toggle="tab" data-bs-target="#manageStudents">
+                            <i class="fas fa-users"></i> Manage Students
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#manageFees">
+                            <i class="fas fa-credit-card"></i> Manage Fees
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#manageTimetable">
+                            <i class="fas fa-calendar"></i> Manage Timetable
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Manage Students Tab -->
+                    <div id="manageStudents" class="tab-pane fade show active">
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <button class="btn btn-primary fw-bold mb-3">
+                                <i class="fas fa-user-plus"></i> Add New Student
+                            </button>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th>Roll No</th>
+                                            <th>Name</th>
+                                            <th>Class</th>
+                                            <th>Email</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10001</td>
+                                            <td>Rajesh Kumar</td>
+                                            <td>12-A</td>
+                                            <td>rajesh@example.com</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10002</td>
+                                            <td>Priya Singh</td>
+                                            <td>12-B</td>
+                                            <td>priya@example.com</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10003</td>
+                                            <td>Aman Patel</td>
+                                            <td>11-A</td>
+                                            <td>aman@example.com</td>
+                                            <td><span class="badge bg-warning text-dark">Inactive</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manage Fees Tab -->
+                    <div id="manageFees" class="tab-pane fade">
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <button class="btn btn-primary fw-bold mb-3">
+                                <i class="fas fa-plus"></i> Add Fee Record
+                            </button>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th>Student Name</th>
+                                            <th>Fee Type</th>
+                                            <th>Amount</th>
+                                            <th>Paid</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Rajesh Kumar</td>
+                                            <td>Tuition Fee</td>
+                                            <td>₹10,000</td>
+                                            <td>₹10,000</td>
+                                            <td><span class="badge bg-success">Paid</span></td>
+                                            <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Priya Singh</td>
+                                            <td>Lab Fee</td>
+                                            <td>₹2,000</td>
+                                            <td>₹0</td>
+                                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Update</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aman Patel</td>
+                                            <td>Sports Fee</td>
+                                            <td>₹3,000</td>
+                                            <td>₹1,500</td>
+                                            <td><span class="badge bg-info">Partial</span></td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Update</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manage Timetable Tab -->
+                    <div id="manageTimetable" class="tab-pane fade">
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <button class="btn btn-primary fw-bold mb-3">
+                                <i class="fas fa-plus"></i> Add Class
+                            </button>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>Subject</th>
+                                            <th>Time</th>
+                                            <th>Teacher</th>
+                                            <th>Room</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>12-A</td>
+                                            <td>Mathematics</td>
+                                            <td>9:00-10:00</td>
+                                            <td>Mr. Sharma</td>
+                                            <td>102</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12-A</td>
+                                            <td>English</td>
+                                            <td>10:15-11:15</td>
+                                            <td>Ms. Gupta</td>
+                                            <td>101</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center mt-5 fw-bold">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Student Fees Management Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function prevMonth() {
+            alert('Previous month clicked');
+        }
+
+        function nextMonth() {
+            alert('Next month clicked');
+        }
+
+        function downloadCalendar() {
+            alert('Academic Calendar has been downloaded successfully!\n\nFile: Academic_Calendar_2024-2025.pdf');
+        }
+    </script>
+</body>
+
+</html>
